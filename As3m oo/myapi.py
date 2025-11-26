@@ -5,7 +5,7 @@ from datetime import date
 import logging
 import sqlite3
 from starlette.requests import Request as Requests
-from category import Category as category_router
+from categories import router as categories_router
 from passlib.hash import bcrypt
 
 app = FastAPI()
@@ -17,7 +17,7 @@ def get_db():
     return conn
 
 
-app.include_router(category_router)
+app.include_router(categories_router)
 
 # Pydantic Models
 
